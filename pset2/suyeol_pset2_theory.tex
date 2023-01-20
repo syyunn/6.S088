@@ -60,4 +60,13 @@ where $j$ enumerates over all selections of $k$ coordinates of $\mathbf{x}$. The
     &\text{ where }     \phi_{k, j}(\mathbf{x})=e^{-L\|\mathbf{x}\|^2} \frac{2L^{\frac{K}{2}}}{\sqrt{k !}} \prod_{i=0}^k \mathbf{x}_{j_i}
 \end{align*}
 
+\section{Problem 4}
+
+\begin{align*}
+\sum_{i=1}^n \sum_{j=1}^n c_i c_j K\left(x^{(i)}, x^{(j)}\right) &= \sum_{i=1}^n \sum_{j=1}^n c_i c_j \langle\psi(x^{(i))}, \psi(x^{(j)})\rangle_{\mathcal{H}}\\
+&= \left(\sum_{i=1}^n c_i \psi(x^{(i)}) \right)^T\left(\sum_{i=1}^n c_i \psi(x^{(i)}) \right) \ge 0\\
+\end{align*}
+
+$\sum_{i=1}^n \sum_{j=1}^n c_i c_j K\left(x^{(i)}, x^{(j)}\right) \ge 0$ implies $K$ is \textit{positive semi-definite}.
+
 \end{document}
