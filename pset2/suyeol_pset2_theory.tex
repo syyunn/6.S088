@@ -1,0 +1,63 @@
+\documentclass[13pt]{article}
+\usepackage[fontsize=10pt]{fontsize}
+
+\usepackage[margin=0.5in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array, txfonts}
+\usepackage{bbm}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\setcounter{secnumdepth}{0}
+\setlength\parindent{0pt}
+
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{prelim}[2][Preliminaries]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+    
+\begin{document}
+ 
+\title{6.S088 Problem Set 2}
+\author{Suyeol Yun\\
+syyun@mit.edu}
+\maketitle
+ 
+\section{Problem 3}
+\begin{align*}
+    K\left(\mathbf{x}, \mathbf{x}^{\prime}\right)=e^{-L\left\|\mathbf{x} - \mathbf{x}^{\prime}\right\|^2}=e^{-L\|\mathbf{x}\|^2} e^{-L\left\|\mathbf{x}^{\prime}\right\|^2} e^{2L\left\langle\mathbf{x}, \mathbf{x}^{\prime}\right\rangle} && (1)
+\end{align*}
+
+For the term $e^{2L\left\langle\mathbf{x}, \mathbf{x}^{\prime}\right\rangle}$, we use Taylor expansion of $e^z$ around $z=0$ and geometry
+
+\begin{align*}
+    e^{2L\left\langle\mathbf{x}, \mathbf{x}^{\prime}\right\rangle}=\sum_{k=0}^{\infty} \frac{1}{k !}\left(2L\left\langle\mathbf{x}, \mathbf{x}^{\prime}\right\rangle\right)^k && (2)
+\end{align*}
+
+Then we have 
+
+\begin{align*}
+    \left\langle\mathbf{x}, \mathbf{x}^{\prime}\right\rangle^k=\left(\sum_{i=1}^d \mathbf{x}_i \mathbf{x}_i^{\prime}\right)^k=\sum_{j \in[d]^k}\left(\prod_{i=1}^k \mathbf{x}_{j_i}\right)\left(\prod_{i=1}^k \mathbf{x}_{j_i}^{\prime}\right) && (3)
+\end{align*}
+
+where $j$ enumerates over all selections of $k$ coordinates of $\mathbf{x}$. Then by plugging in $(2), (3)$ to $(1)$ results in
+
+\begin{align*}
+    K\left(\mathbf{x}, \mathbf{x}^{\prime}\right)&=\left\langle\phi(\mathbf{x}), \phi\left(\mathbf{x}^{\prime}\right)\right\rangle=\prod_{k=0}^{\infty} \prod_{j \in[d]^k} \phi_{k, j}(\mathbf{x}) \phi_{k, j}\left(\mathbf{x}^{\prime}\right)\\
+    &\text{ where }     \phi_{k, j}(\mathbf{x})=e^{-L\|\mathbf{x}\|^2} \frac{2L^{\frac{K}{2}}}{\sqrt{k !}} \prod_{i=0}^k \mathbf{x}_{j_i}
+\end{align*}
+
+\end{document}
