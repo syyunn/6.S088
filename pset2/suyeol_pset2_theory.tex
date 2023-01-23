@@ -35,7 +35,29 @@
 \author{Suyeol Yun\\
 syyun@mit.edu}
 \maketitle
- 
+
+\section{Problem 2}
+\subsection{(a)}
+\begin{align*}
+w^{(t+1)}&=w^{(t)}-\eta \nabla_w \mathcal{L}\left(w^{(t)}\right)\\
+&=w^{(t)}+\eta(y-w X) X^T
+\end{align*}
+
+\subsection{(b)}
+Let $S=XX^T$ and $S'=yX^T$. Then we can express the equation we get from $(a)$ as follows:
+
+\begin{align*}
+    w^{(t+1)}&=w^{(t)}+\eta(y-w X) X^T \\
+    &=w^{(t)}(I-\eta S)+\eta S^{\prime}
+\end{align*}
+
+Then we solve the recurrence relation and get
+
+$$w^{(t)}=\eta S^{\prime}\left[(I-\eta S)^{t-1}+(I-\eta S)^{t-2}+\ldots+(I-\eta S)^1+I\right]$$
+
+(... I fail to solve this problem 2 until the end but I solved all other problems except problem 6.)
+
+
 \section{Problem 3}
 \begin{align*}
     K\left(\mathbf{x}, \mathbf{x}^{\prime}\right)=e^{-L\left\|\mathbf{x} - \mathbf{x}^{\prime}\right\|^2}=e^{-L\|\mathbf{x}\|^2} e^{-L\left\|\mathbf{x}^{\prime}\right\|^2} e^{2L\left\langle\mathbf{x}, \mathbf{x}^{\prime}\right\rangle} && (1)
